@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的设备</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/management.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div style="padding: 20px 10px 0;">设备总数：<strong>3</strong>，在线设备：<strong>2</strong></div>
+			<div class="listItem">
+				<div class="title">固定式扫码望远镜</div>
+				<ul class="list_s common">
+					<li>
+						<p class="number">编号：YNSLS01</p>
+						<p class="model">型号：kyky201801556</p>
+						<p class="address">地址：云南省昆明市石林风景区内-奇风洞</p>
+						<i class="iconfont icon-arrowRight"></i>
+					</li>
+					<li>
+						<p class="number">编号：YNSLS02</p>
+						<p class="model">型号：kyky201801556</p>
+						<p class="address">地址：云南省昆明市石林风景区以北8公里处</p>
+						<i class="iconfont icon-arrowRight"></i>
+					</li>
+				</ul>
+			</div>
+			<div class="listItem">
+				<div class="title">望远镜共享租赁柜</div>
+				<ul class="list_z common">
+					<li>
+						<p class="number">编号：YNSLZ01</p>
+						<p class="address">地址：云南省昆明市石林风景区-北门</p>
+						<i class="iconfont icon-arrowRight"></i>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="cover_box"></div>
+			<div class="statusDetail">
+				<h3 class="statuTitle">设备状态</h3>
+				<div class="status flex">
+					<!--
+						固定式扫码望远镜显示电池电量和在线状态,
+						望远镜租赁柜显示总的望远镜数和当前可租望远镜个数
+					-->
+					<p>
+						<span>62%</span>
+						<span class="color_gray">电池电量</span>
+					</p>
+					<p>
+						<span>是</span>
+						<span class="color_gray">是否在线</span>
+					</p>
+				</div>
+				<div class="product flex">
+					<div class="pro_img">
+						<img src="images/product.png"/>
+					</div>
+					<div class="pro_con">
+						<p>
+							<span class="color_gray">编号</span>
+							<span>YNSLS01</span>
+						</p>
+						<p>
+							<span class="color_gray">地址</span>
+							<span>云南省昆明市石林彝族自治县石林风景区以北8公里处</span>
+						</p>
+					</div>
+				</div>
+				
+				<span class="close">
+					<i class="iconfont icon-guanbi2"></i>
+				</span>
+			</div>
+		</div>
+		<script>
+			$(".common li").click(function () {
+				$(".cover_box").show();
+				$(".statusDetail").css("bottom","0")
+			});
+			
+			var $fst = $(".status p:first span"),
+				$lst = $(".status p:last-child span");
+			$(".list_z li").click(function () {
+				$fst.eq(0).text("32个");
+				$fst.eq(1).text("共有望远镜");
+				$lst.eq(0).text("29个");
+				$lst.eq(1).text("当前望远镜")
+			})
+			$(".close,.cover_box").click(function () {
+				$(".cover_box").hide()
+				$(".statusDetail").css("bottom","-100%");
+				$fst.eq(0).text("62%");
+				$fst.eq(1).text("电池电量");
+				$lst.eq(0).text("是");
+				$lst.eq(1).text("是否在线")
+			})
+		</script>
+	</body>
+</html>

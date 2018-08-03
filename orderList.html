@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的订单</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/order.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="tabList flex">
+				<div class="item active">全部</div>
+				<div class="item">待付款<em>2</em></div>
+				<div class="item">待安装</div>
+				<div class="item">待评价</div>
+				<div class="activeBorder"></div>
+			</div>
+			<div class="scrollContent">
+				<div class="orderList">
+					<div class="list">
+						<div class="orderNumber">
+							<span>订单号：</span>20180615001
+							<i class="iconfont icon-shanchu"></i>
+						</div>
+						<div class="status">
+							<div class="innerWrap">
+								<p>状 &nbsp; 态：<em class="color-blue">待支付</em></p>
+								<p>总 &nbsp; 价：<em>¥27600</em></p>
+							</div>
+							<a href="javascript:void(0)," class="btn-pay">去付款</a>
+						</div>
+						<div class="proBoxs flex">
+					            <img class="img" src="images/product.png" alt="">
+					            <div class="title">
+					                <h1>景区观景大倍率大口径共享望远镜25X100扫码付双筒望眼镜</h1>
+					            	<h2>¥<strong class="price">13800</strong>.00</h2>
+					                <span class="num">2 件</span>
+					            </div>
+						</div>
+					</div>
+					<div class="list">
+						<div class="orderNumber">
+							<span>订单号：</span>20180418001
+							<i class="iconfont icon-shanchu"></i>
+						</div>
+						<div class="status">
+							<div class="innerWrap">
+								<p>状 &nbsp; 态：<em class="color-blue">已完成</em></p>
+								<p>总 &nbsp; 价：<em>¥13800</em></p>
+							</div>
+						</div>
+						<div class="proBoxs flex">
+					            <img class="img" src="images/product.png" alt="">
+					            <div class="title">
+					                <h1>景区观景大倍率大口径共享望远镜25X100扫码付双筒望眼镜</h1>
+					            	<h2>¥<strong class="price">13800</strong>.00</h2>
+					                <span class="num">1 件</span>
+					            </div>
+						</div>
+					</div>
+					<div class="list">
+						<div class="orderNumber">
+							<span>订单号：</span>20180418001
+							<i class="iconfont icon-shanchu"></i>
+						</div>
+						<div class="status">
+							<div class="innerWrap">
+								<p>状 &nbsp; 态：<em class="color-blue">已完成</em></p>
+								<p>总 &nbsp; 价：<em>¥13800</em></p>
+							</div>
+						</div>
+						<div class="proBoxs flex">
+					            <img class="img" src="images/product.png" alt="">
+					            <div class="title">
+					                <h1>景区观景大倍率大口径共享望远镜25X100扫码付双筒望眼镜</h1>
+					            	<h2>¥<strong class="price">13800</strong>.00</h2>
+					                <span class="num">1 件</span>
+					            </div>
+						</div>
+					</div>
+				</div>
+				<div class="footTip">
+					<p>已经没有更多订单了~</p>
+					<i class="iconfont icon-logo"></i>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script>
+			$(function () {
+				//
+				$(".activeBorder").css({
+					"left":  $(".item").eq(0).position().left,
+					"width": $(".item").eq(0).outerWidth()
+				});
+				$(".item").click(function () {
+					$(".activeBorder").stop().animate({
+						left: $(this).eq(0).position().left,
+						width: $(this).eq(0).outerWidth()
+					})
+					$(this).addClass("active").siblings().removeClass("active")
+				});
+				//删除
+				$(".orderNumber i").click(function () {
+					$(this).parent().parent(".list").remove();
+				})
+				//
+				$(".list").click(function () {
+					window.location.href="orderDetail.html"
+				})
+			})
+		</script>
+	</body>
+</html>

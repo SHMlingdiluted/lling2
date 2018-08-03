@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>景区合作申请</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/detail.css" />
+	</head>
+	<body style="padding: 0;">
+		<section id="wrapper" class="wrapper">
+			<div class="status">
+				申请状态：<span>待审核</span>
+				<p>您已成功提交景区合作申请，请等待商家处理</p>
+			</div>
+			<h1 class="title">泸沽湖风景区</h1>
+			<div class="area flex">
+				<div class="left">
+					<img src="images/800x800/luguhu.png" alt="图片" />
+				</div>
+				<div class="right">
+					<span class="userName">联系人：张先生</span>
+					<span class="areaName">地 &nbsp; 址：云南省 丽江市 宁蒗彝族自治县泸沽湖</span>
+				</div>
+			</div>
+		</section>
+		<section class="areaIntro">
+			<h1>景区简介<i class="iconfont icon-arrowDown"></i></h1>
+			<div class="desc">
+				<p>​泸沽湖位于宁蒗县北部永宁乡和四川省盐源县左侧的万山丛中，泸沽湖大落水村距宁蒗县城有73公里，距丽江古城200公里左右。泸沽湖为川滇两省界湖。</p>
+				<p>泸沽湖面积50多平方千米，海拔2690米，平均水深45米，最深处达93米，透明度高达11米，最大能见度为12米，湖水清澈蔚蓝，是云南海拔最高的湖泊，也是中国最深的淡水湖之一。</p>
+			</div>
+		</section>
+		<div class="contact"><a href="tel:400-0185-515">联系客服</a></div>
+		<script src="js/jquery.js"></script>
+		<script>
+			var n = 1;
+			$(".areaIntro").click(function () {
+				$(this).toggleClass("show");
+				if(n){
+					n=0;
+					$(".desc").slideDown()
+				}else{
+					n = 1;
+					$(".desc").slideUp()
+				}
+			})
+		</script>
+	</body>
+</html>

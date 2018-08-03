@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>价格调整</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/management.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="edit_price">
+				<div class="editList">
+					<p>
+						<span class="left">产品</span>
+						<span class="right">
+							<span>观景3分钟</span>
+						</span>
+					</p>
+					<p>
+						<span class="left">价格</span>
+						<span class="right">
+							<input id="price1" class="red-color" type="text" placeholder="输入金额" />
+						</span>
+					</p>
+				</div>
+				<div class="editList">
+					<p>
+						<span class="left">产品</span>
+						<span class="right">
+							<span>观景5分钟</span>
+						</span>
+					</p>
+					<p>
+						<span class="left">价格</span>
+						<span class="right">
+							<input id="price2" class="red-color" type="text" value="7.00" />
+						</span>
+					</p>
+				</div>
+				<div class="editList">
+					<p>
+						<span class="left">产品</span>
+						<span class="right">
+							<span>租望远镜</span>
+						</span>
+					</p>
+					<p>
+						<span class="left">价格</span>
+						<span class="right">
+							<input id="price3" class="red-color" type="text" value="10.00" />
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="edit_btn">
+				<a href="javascript:void(0);" class="save">
+					<span style="background: #8b97a9;">
+						<i class="iconfont icon-baocun1"></i>
+					</span>
+					保存
+				</a>
+				<a href="javascript:void(0);" class="delete">
+					<span style="background: #f29380;">
+						<i class="iconfont icon-shanchu"></i>
+					</span>
+					删除
+				</a>
+			</div>
+		</div>
+		<div id="messageBox" class="message-floor">
+			<div class="message-box-icon">
+				<i id="iconTips" class="iconfont icon-chenggong2"></i>
+			</div>
+			<div class="message-box-content">保存成功</div>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script>
+			$(".save").click(function () {
+				$(".message-floor").show();
+				setTimeout("messageBox.style.display='none'",2000);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>订单详情</title>
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="font/iconfont.css" />
+	<link rel="stylesheet" href="css/order.css" />
+	<script src="js/jquery.js"></script>
+</head>
+<body style="padding-bottom: 50px;">
+	<div class="topBox common">
+		<div class="inner">
+			<div class="orderHead">
+				<div class="contactInfo flex">
+					<div class="name iconfont icon-user">张先生</div>
+					<div class="phone iconfont icon-tell">15587258651</div>
+				</div>
+			</div>
+			<div class="info">
+				<ul>
+					<li>订单状态：<span><em>待付款</em></span></li>
+					<li>订单编号：<span>20180615001</span></li>
+					<li>下单时间：<span>2018-6-20 14:25:30</span></li>
+					<li>支付方式：<span>微信支付(¥13800.00)</span></li>
+				</ul>
+				
+				<!--待付款时显示,其它状态时不显示-->
+				<ul class="icon-btn flex">
+					<li>取消订单</li>
+					<li><a href="">去付款</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="invoiceBox common">
+		<div class="inner">
+			<div class="info">
+				<ul>
+					<li>发票类型：<span>普通发票</span></li>
+					<li>发票抬头：<span>个人</span></li>
+					<li>发票内容：<span>商品明细</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="areaBox common">
+		<div class="inner">
+			<div class="orderHead">
+				<p>配送至景区</p>
+			</div>
+			<div class="info flex">
+				<img src="images/800x800/shilin.png" alt="石林" />
+				<div class="area">
+					<h4>石林风景区</h4>
+					<h5>昆明市石林彝族自治县石林街道</h5>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="addBox common">
+		<i class="iconfont icon-dingwei"></i>导航去景区
+		<i class="iconfont icon-arrowRight fr"></i>
+	</div>
+	<div class="proBox common">
+		<div class="inner">
+			<div class="orderHead">
+				<p>商品</p>
+			</div>
+			<div class="info flex">
+				<img src="images/product.png" alt="共享望远镜" />
+				<div class="area">
+					<h4>景区观景大倍率大口径共享望远镜25X100扫码付双筒望眼镜</h4>
+					<p>¥<strong>13800</strong>.00</p>
+					<small>x1</small>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="priceBox common">
+		<div class="inner">
+			<div class="info">
+				<ul>
+					<li>商品金额<span>¥13800.00</span></li>
+					<li>服务费<span>+¥0.00</span></li>
+				</ul>
+				<div class="realPrice">实付金额：<span>¥13800.00</span></div>
+			</div>
+		</div>
+	</div>
+	
+	<!--除待付款状态下不显示，其它状态下显示-->
+	<div class="orderDel" style="display: none;">删除订单</div>
+</body>
+</html>

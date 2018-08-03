@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>余额提现</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/user.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="wrapper" class="container">
+			<div class="accountBalance">
+				<a href="withdrawList.html" class="history">交易明细 &rsaquo;</a>
+				<i class="iconfont icon-closeaccount"></i>
+				<p>我的余额</p>
+				<p class="num">¥<span>2650.00</span></p>
+				<div class="tx_btn"><span>提现</span></div>
+			</div>
+
+			<div class="cover_box"></div>
+			<div class="withdraw">
+				<div class="tit"><span class="cancel">取消</span>余额提现</div>
+				<div class="topBox flex" style="display: none;">
+					<span>到账银行卡</span>
+					<div class="card">
+						<span class="bank">交通银行(5918)</span>
+						<em>2小时内到账</em>
+						<i class="iconfont icon-arrowRight"></i>
+					</div>
+				</div>
+				<div class="bottomBox">
+					<div class="input_text">
+						<h4>提现金额</h4>
+						<p>¥<input id="num" type="text" /></p>
+					</div>
+					<p class="allAuccont">账户余额
+						¥<em>2650.00</em>,<span>全部提现</span>,可去微信钱包查看
+					</p>
+					<div class="take_cash disabled">提现</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function () {
+				//提现跳转按钮
+				$(".tx_btn").click(function () {
+					$(".cover_box").show()
+					$(".withdraw").css("bottom","0");
+				})
+				//取消按钮
+				$(".cancel,.cover_box").click(function () {
+					//$(".accountBalance").show();
+					$(".cover_box").hide()
+					$(".withdraw").css("bottom","-100%");
+				})
+				
+				var $val = $("#num").val();
+				var $num = $(".allAuccont").children("em").text();
+				$(".allAuccont span").click(function () {
+					$("#num").val($num);
+					$(".take_cash").removeClass("disabled");
+				});
+				//
+				$("#num").keyup(function () {
+					if(!$(this).val()=="") {
+						$(".take_cash").removeClass("disabled");
+					}else{
+						$(".take_cash").addClass("disabled");
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

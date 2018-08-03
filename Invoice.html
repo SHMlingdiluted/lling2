@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>发票信息</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/invoice.css">
+<link rel="stylesheet" href="font/iconfont.css" />
+<script src="js/jquery.js"></script>
+</head>
+
+<body style="background:#f2f2f2;">
+<header id="header" class="header" style="display: none;">
+	<a href="javascript:history.back();" class="return iconfont icon-arrowLeft"></a>
+    <div class="item">发票信息</div>
+</header>
+<section id="content">
+	<div class="invoice_style pd10">
+    	<h1>发票类型</h1>
+        <ul class="clearfix">
+            <li>普通发票<i class="iconfont icon-gou"></i></li>
+        	<li class="elect">电子发票<i class="iconfont icon-gou"></i></li>
+        	<li class="VAT">增值税发票<i class="iconfont icon-gou"></i></li>
+        	<li class="selected">不开发票<i class="iconfont icon-gou"></i></li>
+        </ul>
+    </div>
+    <div class="invoice_title pd10">
+    	<h1>发票抬头</h1>
+        <ul class="title clearfix">
+        	<li class="current">
+        		<span class="circle"></span>个人
+        	</li>
+        	<li>
+        		<span class="circle"></span>单位
+        	</li>
+        </ul>
+        <div class="company">
+        	<input type="text" placeholder="填写单位名称">
+            <ul>
+            	<li>公司</li>
+            	<li>历史记录</li>
+            </ul>
+        </div>
+    </div>
+    <div class="Information pd10" style="display:none;">
+        <h1>发票信息</h1>
+        <div class="inv">
+            <ul class="basic">
+                <li><span>收票人姓名</span><input type="text" placeholder="姓名"></li>
+                <li><span>收票人手机</span><input type="text" placeholder="移动电话"></li>
+                <li><span>收票人邮箱</span><input type="text" placeholder="用于接收电子发票邮件"></li>
+             </ul>
+             <ul class="vat_invoice" style="display:none;">
+                <li style="border-top: #e5e5e5 1px solid;"><span>详细地址</span><input type="text" placeholder="收票人地址"></li>
+                <li><span>单位名称</span><input type="text" placeholder="公司名称(发票抬头)"></li>
+                <li><span>注册地址</span><input type="text" placeholder="公司注册地址"></li>
+                <li><span>注册电话</span><input type="text" placeholder="公司注册电话"></li>
+                <li><span>开户银行</span><input type="text" placeholder="开户行"></li>
+                <li><span>银行账号</span><input type="text" placeholder="账号"></li>
+                <li><span>纳税人识别码</span><input type="text" placeholder="识别码"></li>
+            </ul>
+       </div>
+    </div>
+    <div class="invoice_content pd10">
+    	<h1>发票内容</h1>
+        <ul>
+        	<li class="current" style="line-height:30px;">
+        		<span class="circle"></span>明细
+        	</li>
+        </ul>
+    </div>
+    <p class="tips">我公司依法开具发票，如您购买的商品按税法规定属于不得从增值税销项税额中抵扣的项目（例如集体福利或个人消费等）， 请您选择普通发票。</p>
+    <div class="sure"><span>确定</span></div>
+</section>
+<script>
+$(".invoice_style li").click(function(){
+	$(this).addClass("selected").siblings().removeClass("selected")
+	$(".invoice_title").show()
+	})     //选择发票类型 样式
+$(".elect").click(function(){
+	$(".Information").show()
+	$(".vat_invoice").hide()
+	})
+$(".VAT").click(function(){
+	$(".Information,.vat_invoice").show()
+	$(".invoice_title").hide()
+	})
+$(".invoice_style li:first,.invoice_style li:last").click(function(){
+	$(".Information").hide()
+	})
+
+//切换个人和单位
+$(".title li").click(function(){
+	$(this).addClass("current").siblings().removeClass("current")
+	$(".company").hide()
+	})
+$(".title li:last").click(function(){
+	$(".company").show()
+	})
+$(".company li").click(function(){
+	$(this).parent().hide()
+	$(".company input").val($(this).text())
+	})//填写单位名称的历史记录
+$(".company i").click(function(){
+	$(".company input").val("")
+	})	//清除单位里面input的值
+</script>
+</body>
+</html>

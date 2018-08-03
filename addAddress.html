@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新增地址</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="font/iconfont.css">
+		<link rel="stylesheet" href="css/city.css" />
+		<link rel="stylesheet" href="css/address.css">
+		<script src="js/jquery.js"></script>
+	</head>
+
+	<body>
+		<section id="addContent">
+			<ul class="newAddress">
+				<li>联 &nbsp;系 &nbsp;人：<input type="text" placeholder="姓名"></li>
+				<li>联系电话：<input type="text" placeholder="号码"></li>
+				<li id="city">
+		            <table width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="86px">景区地址：</td>
+							<td>
+								<input id="areaAddress" class="aui-Address-box-input" name="areaAddress" readonly=""  placeholder="所在地区" type="text">
+							</td>
+							<td width="20px" align="right"><i class="iconfont icon-arrowDown"></i></td>
+						</tr>
+					</table>
+		        </li>
+				<li>详细地址：<input type="text" placeholder="详细地址"></li>
+			</ul>
+		</section>
+		<div class="save">保存地址</div>
+		
+		<script src="js/city.js"></script>
+		<script src="js/cityselect.js"></script>
+		<script>
+			//地区调用
+			!function() {
+				var $target = $("#areaAddress");
+				$target.citySelect();
+				$target.on("click", function (event) {
+					event.stopPropagation();
+					$target.citySelect("open");
+				});
+				$target.on("done.ydui.cityselect", function (ret) {
+					$(this).val(ret.provance + " " + ret.city + " " + ret.area);
+				});
+			}();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的订单</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/list.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top_search">
+				<form id="search_form" class="search_form" action="">
+					<div class="search_box flex">
+						<div class="input_box">
+							<i class="left_icon_search iconfont icon-search"></i>
+							<input id="search" class="search" type="text" />
+							<span class="placeholder">
+								<i class="iconfont icon-search"></i>搜索所有订单
+							</span>
+						</div>
+						<span class="cancel">取消</span>
+					</div>
+				</form>
+			</div>
+			<div class="list_order">
+				<ul>
+					<li>
+						<div class="title">
+							<span class="num">2018-7-6 12:32:49</span>
+							<span class="status">已完成</span>
+						</div>
+						<a href="myOrderDetail.html">
+							<div class="product flex">
+								<img class="side_left" src="images/product.png" alt="望远镜" />
+								<div class="side_right">
+									<div class="product_name">固定式扫码望远镜-YNSLS01</div>
+									<div class="address">地址:昆明市石林县石林风景区-北门明市石林县石林风景区-北门</div>
+									<div class="price_box">
+										<span>套餐A：观景3分钟</span>
+										<span class="price color_red fr">¥5.00</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<div class="title">
+							<span class="num">2018-5-1 13:17:27</span>
+							<span class="status">已完成</span>
+						</div>
+						<a href="">
+							<div class="product flex">
+								<img class="side_left" src="images/upload/telescope3.jpg" alt="望远镜" />
+								<div class="side_right">
+									<div class="product_name">共享租赁柜-YNSLZ01</div>
+									<div class="address">地址:昆明市石林县石林风景区-北门明市石林县石林风景区-北门</div>
+									<div class="price_box">
+										<span>租机：/次/12小时</span>
+										<span class="price color_red fr">¥10.00</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<div class="title">
+							<span class="num">2018-4-6 9:18:35</span>
+							<span class="status">已完成</span>
+						</div>
+						<a href="">
+							<div class="product flex">
+								<img class="side_left" src="images/product.png" alt="望远镜" />
+								<div class="side_right">
+									<div class="product_name">固定式扫码望远镜-YNSLS01</div>
+									<div class="address">地址:昆明市石林县石林风景区-北门明市石林县石林风景区-北门</div>
+									<div class="price_box">
+										<span>套餐B：观景5分钟</span>
+										<span class="price color_red fr">¥7.00</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<div class="noMore">没有更多了</div>
+			</div>
+			<div class="cover_box"></div>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script>
+			$(".search").focus(function () {
+				$(".search_box").addClass("focus");
+				$(".cover_box").show();
+			})
+			$(".search").blur(function () {
+				$(".search_box").removeClass("focus");
+				$(".cover_box").hide();
+			})
+			$(".cancel,.cover_box").click(function () {
+				$(".search_box").removeClass("focus");
+				$(".cover_box").hide();
+			})
+		</script>
+	</body>
+</html>

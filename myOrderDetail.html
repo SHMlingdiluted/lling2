@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单详情</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/list.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="list_detail">
+				<ul id="orderInfo1" class="order-msg">
+					<li>订单状态：<em>已完成</em></li>
+					<li>订单编号：<span>20180706001</span></li>
+					<li>扫码时间：<span>2018-07-06 12:32:49</span></li>
+					<li class="mask">账户余额：<span>0</span><span class="fr">押金已退</span></li>
+					<!--租机订单显示押金收/退状态及余额，扫码观景订单不显示-->
+				</ul>
+				<h4 id="orderInfo2" class="title">设备信息</h4>
+				<div id="orderInfo3" class="product flex">
+					<img class="side_left" src="images/upload/p79739.jpg" />
+					<div class="side_right">
+						<span class="device_response">正常</span>
+						<div class="product_name">编号-YNSLS01</div>
+						<div class="address">地址:昆明市石林县石林风景区-北门明市石林县石林风景区-北门</div>
+						<div class="price_box">
+							<span>套餐A：观景3分钟</span>
+							<span class="price color_red fr">¥5.00</span>
+						</div>
+					</div>
+				</div>
+				<ul id="orderInfo4" class="order-msg">
+					<li>支付方式：微信支付</li>
+					<li>收益：30%</li>
+					<li>详情：12:35:49 关闭<!--租机则显示几点几分几秒 存入XX柜--></li>
+				</ul>
+				<ul id="orderInfo5" class="order-msg">
+					<li>消费金额：<span class="color_red fr">¥5.00</span></li>
+					<li>使用时长：<span class="color_red fr">3分钟</span></li>
+					<li class="total">实付金额：<strong class="color_red">¥5.00</strong></li>
+				</ul>
+				<div class="orderDel">删除订单</div>
+			</div>
+		</div>
+	</body>
+</html>

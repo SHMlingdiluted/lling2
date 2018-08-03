@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="Keywords" content="看一看，好风景，共享，望远镜"/>
+	<title>好风景 看一看</title>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="font/iconfont.css" />
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" href="css/look.css" />
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<!--固定式扫码望远镜显示-->
+	<section class="telescope_s" style="display: none;">
+		<h2 class="top"><i class="iconfont icon-logo"></i>共享望远镜</h2>
+		<ul class="img_box clearfix">
+			<li>
+				<a href="paySuccess.html">
+					<img src="images/800x800/dianchi1.png" alt="" />
+					<div class="list_info">
+						<p class="scenic_area">扫码观景3分钟</p>
+						<p class="time_price">¥<strong>5.00</strong></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/large/banchuidao.png" alt="" />
+					<div class="list_info">
+						<p class="scenic_area">扫码观景5分钟</p>
+						<p class="time_price">¥<strong>7.00</strong></p>
+					</div>
+				</a>
+			</li>
+			<li style="display: none;">
+				<div class="tips">温馨提示：</div>
+				<ol>
+					<li>请爱护公共设施</li>
+					<li>爱护环境，从我做起</li>
+					<li></li>
+				</ol>
+			</li>
+		</ul>
+	</section>
+		
+	<!--租赁柜扫码租机显示-->
+	<section class="telescope_z">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+			    <div class="swiper-slide"><img src="images/upload/telescope1.png"/></div>
+			    <div class="swiper-slide"><img src="images/upload/telescope2.png" alt="" /></div>
+			    <div class="swiper-slide"><img src="images/upload/telescope5.png"/></div>
+				<div class="swiper-slide"><img src="images/upload/telescope4.png"/></div>
+				<div class="swiper-slide"><img src="images/upload/telescope3.png"/></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="cash_yj">押金¥199.00</div>
+		<div class="desc">
+			<h4>千里鹰（QANLIIY）便携双筒望远镜升级版 高倍高清微光夜视非红外观景望眼镜</h4>
+			<div class="priceRent">租金 
+				<span style="margin-left: 5px;">¥<strong>10.00/次/12小时</strong></span>
+			</div>
+		</div>
+		<div class="tips">
+			<h4>使用说明<i class="iconfont icon-arrowDown"></i></h4>
+			<p>客户通过扫码支付押金后取走望远镜，以9.9元/12小时/次的计费方式结算，使用完成后通过公众号找到附近租赁柜退还望远镜并退回押金（已扣除租赁费）</p>
+		</div>
+		<div class="payment">立即租赁</div>
+	</section>
+	<script src="js/swiper.min.js"></script>
+	<script>
+		//swiper
+		var swiper = new Swiper('.swiper-container', {
+      		centeredSlides: true,
+    		loop: true,//循环
+    		speed: 1000,
+      		pagination: ".swiper-pagination",
+		       paginationClickable: true
+    	});
+		$(function () {
+			$(".img_box img").css({
+				"height": $(".img_box li").outerWidth()
+			});
+			$(".tips").click(function () {
+				$(this).children("p").slideToggle();
+				$(this).toggleClass("show")
+			})
+		})
+	</script>
+</body>
+</html>

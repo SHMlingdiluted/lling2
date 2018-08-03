@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>购机加盟</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/join.css" />
+		<link rel="stylesheet" href="css/city.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<span class="logo">
+				<i class="iconfont icon-logo"></i>
+			</span>
+			<img src="images/banner3.png"/>
+		</div>
+		<div class="container">
+			<form name="appForm">
+				<!--点击购机加盟显示-->
+				<div class="item flex">加盟方式：
+					<ul class="option">
+						<li class="checked">
+							<i class="radio"></i>购租赁柜
+						</li>
+						<li>
+							<i class="radio"></i>购扫码望远镜
+						</li>
+					</ul>
+				</div>
+					
+				<!--点击景区合作显示,此时提交跳转至submitStatus.html页面-->
+				<div class="item" style="display: none;">合作模式：提供场所，分享收益</div>
+				<div class="item">景点名称：<input id="areaName" type="text" name="areaName" placeholder="景区名称" /></div>
+				<div class="item">
+					<table width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="86px">景区地址：</td>
+							<td>
+								<input id="areaAddress" class="aui-Address-box-input" name="areaAddress" readonly=""  placeholder="所在地区" type="text">
+							</td>
+							<td width="20px" align="right"><i class="iconfont icon-arrowDown"></i></td>
+						</tr>
+					</table>
+				</div>
+				<div class="item">联 &nbsp;系 &nbsp;人：<input id="userName" type="text" name="userName" placeholder="姓名" /></div>
+				<div class="item">联系电话：<input id="tel" type="text" name="tel" placeholder="电话" /></div>
+				<div class="agreement">
+					<i class="iconfont icon-gou6"></i>我同意<a href="coopTerms.html">《合作条款》</a>
+				</div>
+				<div class="submit">提交</div>
+			</form>
+
+		</div>
+		<div class="tipBox">
+			<div class="tip">
+				<h1>看一看 共享望远镜提醒您：</h1>
+				<p>请阅读合作条款并同意</p>
+				<span onclick="$('.tipBox').hide()">确定</span>
+			</div>
+		</div>
+		<script>
+			$(function () {
+				$(".item > ul > li").click(function () {
+					$(this).addClass("checked").siblings().removeClass("checked")
+				});
+				$(".item :input").focus(function () {
+					$(this).parent(".item").addClass("focus")
+				});
+				$(".item :input").blur(function () {
+					$(this).parent(".item").removeClass("focus")
+				});
+				
+				//勾选合作条款
+				$(".agreement").on("click", function () {
+					$(this).toggleClass("checked")
+				})
+				
+				//提交按钮
+				$(".submit").click(function () {
+					//验证
+					//var strphone=/^1[3|4|5|7|8][0-9]{9}$/;
+					if(appForm.areaName.value==""){
+						alert("请输入景区名称！")
+						return false;
+					}else if(appForm.areaAddress.value==""){
+						alert("请选择景区地址！")
+						return false;
+					}else if(appForm.userName.value==""){
+						alert("请输入联系人！")
+						return false;
+					}else if(appForm.tel.value==""){
+						alert("请输入联系电话！")
+						return false;
+						if(!strphone.test($(this).val())){
+							alert("请输入11位正确的手机号")
+						}
+					}
+					
+					var $agree = $(".agreement"),
+						$this = $(".option li");
+					if($this.hasClass("checked") && $agree.hasClass("checked")){
+						window.location.href="detail.html"
+					}else if(!$agree.hasClass("checked")){
+						$(".tipBox").show()
+					};
+				})
+			})
+		</script>
+		<script src="js/city.js"></script>
+		<script src="js/cityselect.js"></script>
+		<script>
+		//地区调用
+		!function() {
+			var $target = $("#areaAddress");
+			$target.citySelect();
+			$target.on("click", function (event) {
+				event.stopPropagation();
+				$target.citySelect("open");
+			});
+			$target.on("done.ydui.cityselect", function (ret) {
+				$(this).val(ret.provance + " " + ret.city + " " + ret.area);
+			});
+		}();
+		</script>
+	</body>
+</html>

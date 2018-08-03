@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>填写订单</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+	<body style="padding-bottom: 60px;">
+		<address>
+		    <div class="address">
+		    	<a href="addressManage.html">
+			        <div class="contact">杨先生 155****8651</div>
+			        <p>云南省昆明市石林县石林风景区</p>
+			        <i class="iconfont icon-arrowRight"></i>
+		    	</a>
+		    </div>
+		    <p class="border"></p> 
+		</address>
+		<section id="container">
+	        <div class="product flex">
+	            <img class="img" src="images/product.png" alt="">
+	            <div class="title">
+	                <h1>景区观景大倍率大口径共享望远镜25X100扫码付双筒望眼镜</h1>
+	                <h2 class="countBox">
+	                	¥<strong class="price">13800</strong>.00
+	                	<span>
+							<a class="minus gray">-</a>
+							<input class="num" type="text" value="1" />
+							<a class="plus">+</a>
+						</span>
+	                </h2>
+	            </div>
+	        </div>
+		    <div class="listItem">
+		        <p>配送方式<em>易杰配送</em></p>
+		        <p>安装维护<em>由易杰平台提供配送、安装、维护</em></p>
+		    </div>
+		    <div class="listItem" onclick="window.location.href='Invoice.html'">
+		        <p>发票信息
+		        	<i class="iconfont icon-arrowRight fr"></i>
+		        	<em>不开发票</em>
+		        </p>
+		    </div>
+		</section>
+		<footer class="footer">合计：
+		        <em>¥<strong class="total">13800</strong>.00</em>
+		    	<span class="submit" onclick="window.location.href='payment.html'">提交订单</span>
+		    </footer>
+	</body>
+	<script>
+		$(function() {
+			//数量 减
+			$(".minus").click(function () {
+				var n = $(this).parent().find(".num");
+				n.val(parseInt(n.val()) - 1);
+				if (n.val() <= 1) {
+					n.val(1);
+					$(this).addClass("gray");
+				}
+				TotalPrice();
+			});
+			//数量 加
+			$(".plus").click(function () {
+				var n = $(this).parent().find(".num");
+				n.val(parseInt(n.val()) + 1);
+				$(this).siblings(".minus").removeClass("gray")
+				TotalPrice();
+			});
+			
+			//计算价格
+			function TotalPrice () {
+				var oprice = 0;
+				var num = parseInt($(".countBox").find(".num").val());
+				var price = parseFloat($(".countBox").find(".price").text());
+				var total = price * num; //计算单个商品的总价
+				oprice += total; // 计算总价
+				$(".total").text(oprice.toFixed()); // toFixed(2)四舍五入两位小数位数
+			}
+			
+		})
+	</script>
+</html>

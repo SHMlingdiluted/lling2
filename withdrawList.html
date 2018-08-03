@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>提现明细</title>
+		<link rel="stylesheet" href="font/iconfont.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<script src="js/jquery.js"></script>
+		<style type="text/css">
+			body { background: #fff;}
+			.list li {
+				position: relative;
+				padding: 10px;
+				border-bottom: #e5e5e5 1px solid;
+			}
+			.list h4 {font-weight: bold;}
+			.list h5 { color: #666;}
+			.no_record {
+				display: none;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				text-align: center;
+				color: #666;
+				-webkit-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
+			}
+			.no_record i {font-size: 40px;color: #f23030;}
+			.detail-fixed {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				color: #999;
+				background: #fff;
+				display: none;
+			}
+			.detail span {
+				float: right;
+				color: #000;
+			}
+			.amount { padding: 25px 10px;}
+			.amount strong { 
+				position: relative;
+				top: -5px;
+				float: right;
+				color: #000;
+				font-size: 24px;
+			}
+			.itemList {
+				line-height: 30px;
+				padding: 10px;
+				border-top: #e5e5e5 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<!--提现记录-->
+		<div class="wrap">
+			<!--无记录时显示-->
+			<div class="no_record">
+				<h4>您还没有提现记录</h4>
+				<i id="logo" class="iconfont icon-logo"></i>
+			</div>
+			
+			<ul class="list">
+				<li>
+					<h4>提现
+						<span class="num fr">- 2650.00</span>
+					</h4>
+					<h5>
+						<em class="date">2018-07-02 13:10:50</em>
+						<span class="status fr">提现成功</span>
+					</h5>
+				</li>
+				<li>
+					<h4>提现
+						<span class="num fr">- 682.00</span>
+					</h4>
+					<h5>
+						<em class="date">2018-06-06 09:10:45</em>
+						<span class="status fr">提现成功</span>
+					</h5>
+				</li>
+				<li>
+					<h4>提现
+						<span class="num fr">- 360.00</span>
+					</h4>
+					<h5>
+						<em class="date">2018-05-20 13:14:20</em>
+						<span class="status fr">提现成功</span>
+					</h5>
+				</li>
+				<li>
+					<h4>提现
+						<span class="num fr">- 98.00</span>
+					</h4>
+					<h5>
+						<em class="date">2018-03-22 17:30:02</em>
+						<span class="status fr">提现成功</span>
+					</h5>
+				</li>
+			</ul>
+		</div>
+		
+		<!--提现详情-->
+		<div class="detail-fixed">
+			<div class="detail">
+				<div class="amount">出账金额<strong>98.00</strong></div>
+				<ul class="itemList">
+					<li>类型 <span>提现</span></li>
+					<li>时间 <span>2018-07-02 13:10:50</span></li>
+					<li>交易单号 <span style="font-size: 13px;">47303180702201248329</span></li>
+					<li>状态 <span>成功</span></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".list li").click(function () {
+				$(".detail-fixed").show()
+			})
+		</script>
+	</body>
+</html>
