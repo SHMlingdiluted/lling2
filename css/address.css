@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ padding-bottom:60px;}
+
+/****** page addressManage ******/
+.addlist {
+	padding: 10px;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.address {
+	display: inline-block;
+	width: calc(100% - 50px);
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.address h1 {
+	font-weight: 600;
+	font-size: 16px;
+}
+.address p {
+	font-size: 14px;
+	margin-top: 5px;
+}
+.address em {
+	position: relative;
+	top: -5px;
+	background: #f00;
+	border-radius: 10px 10px 10px 0;
+	padding: 2px 5px;
+	font-size: 10px;
+	color: #fff;
+	opacity: 0;
+}
+.addlist .selected em { 
+	opacity: 1;
+}
+.edit a {
+	border-left:#bfbfbf 1px solid;
+	padding:5px 0 5px 12px;
+}
+.edit a i {
+	font-size: 20px;
+	color: #666;
+}
+.newAdd,
+.save {
+	z-index: 99;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background: #f00;
+	color: #fff;
+	line-height: 50px;
+}
+
+.newAdd a { color:#fff;}
+.empty {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	color: #333;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	display: none;
+}
+.empty i {
+	display: block;
+	font-size: 80px;
+	color: #999;
+	margin-bottom: 5px;
+}
+
+
+
+/****** page addAddress ******/
+.newAddress {
+	background: #fff;
+	line-height: 50px;
+}
+.newAddress li {
+	padding: 0 15px;
+}
+.newAddress li + li {
+	border-top: #e1e1e1 1px solid;
+}
+.newAddress li input {
+	width: 65%;
+	padding-left: 10px;
+	font-size: 16px;
+	height: 40px;
+}
+
+#city { 
+	padding-right:5px; 
+	overflow:hidden;
+}
+#city table {
+	 width: 100%; 
+	 height: 50px;
+	 line-height: 20px;
+	 table-layout: fixed;
+}
+#areaAddress {
+	width: 100%;
+	padding: 0;
+}
+
+/*改变placeholder的默认样式*/
+textarea::-webkit-input-placeholder {    /* 使用webkit内核的浏览器 */
+	font-size: 13px;
+}
+textarea:-moz-placeholder {              /* Firefox版本4-18 */
+	font-size: 13px;
+}              
+textarea::-moz-placeholder {             /* Firefox版本19+ */
+	font-size: 13px;
+}             
+textarea:-ms-input-placeholder {         /* IE浏览器 */
+	font-size: 13px;
+}        
+
+
+
+
+
+

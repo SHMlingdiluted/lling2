@@ -1,0 +1,285 @@
+/************************
+ * page profit 营收统计
+ ************************/
+.checkBox {
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	background: #fff;
+	border-radius: 3px;
+}
+.icon-down {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 8px solid #666;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: none;
+	border-radius: 2px;
+}
+.checkDate {
+	font-size: 14px;
+	padding: 10px;
+}
+.total {
+	padding: 10px;
+	background: #fff;
+	margin-bottom: 5px;
+}
+.date,
+.title {
+	color: #666;
+	padding: 10px 10px 5px;
+	border-bottom: #e5e5e5 1px solid;
+}
+.list li {
+	margin-bottom: 10px;
+}
+.list p,
+.listItem .common li {
+	background: #fff;
+	padding: 10px 15px;
+	border-bottom: #e5e5e5 1px solid;
+}
+.cover_box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    transition: all .4s;
+    display: none;
+}
+.fixTop {
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	max-width: 750px;
+	text-align: center;
+	margin: 0 auto;
+	background: #fff;
+	transition: all .3s;
+}
+.fixTop .top {
+	padding: 20px 0 10px;
+}
+.number_pro {
+	padding: 0 10px;
+	-webkit-user-select:none;
+}
+.number_pro > p {
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	padding: 10px 0 15px;
+	border-radius: 3px;
+}
+.number_pro > p:hover,
+.number_pro > p:active,
+.number_pro p.active {
+	background: rgba(0,0,0,.1);
+}
+.number_pro i {
+	display: block;
+	font-size: 30px;
+	color: cadetblue;
+}
+.dateBox {
+	padding: 10px;
+	margin: 20px 0 10px;
+	line-height: 30px;
+}
+.choose_date,
+.status > p,
+.pro_con {
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+}
+.choose_date input {
+	width: 45%;
+	height: 30px;
+	padding: 0 10px;
+	background: rgba(208,208,208,.1);
+	border-radius: 3px;
+	font-size: 14px;
+}
+.check_btn {
+	float: right;
+	margin: 0 20px 20px 0;
+	padding: 6px 20px;
+	border-radius: 3px;
+	background: #f29380;
+	color: #fff;
+}
+
+/*******************************
+ * page myDevice 我的设备
+ *******************************/
+.listItem {
+	margin-top: 10px;
+}
+.listItem .common li {
+	position: relative;
+	padding-right: 30px;
+}
+.listItem .common li i {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	color: #666;
+	transform: translateY(-50%);
+}
+.loadMore {
+	text-align: center;
+	margin-top: 30px;
+	color: #666;
+}
+
+.statusDetail {
+	position: fixed;
+	bottom: -100%;
+	width: 100%;
+	height: 70%;
+	padding: 10px;
+	max-width: 750px;
+	background: #fff;
+	transition: all .3s;
+}
+.statuTitle {
+	text-align: center;
+	margin: 10px;
+}
+.status {
+	text-align: center;
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	border-bottom: #e5e5e5 1px dashed;
+}
+.status span {
+	display: block;
+}
+.product {
+	padding: 10px 0;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.pro_img {
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	overflow: hidden;
+	background: #fff;
+	border: #e5e5e5 1px solid;
+	border-radius: 50%;
+}
+.pro_img img {
+	width: 100%;
+	height: 100%;
+}
+.pro_con p + p {
+	margin-top: 8px;
+}
+.color_gray {
+	color: #666;
+}
+
+.close {
+	position: absolute;
+	top: -15px;
+	right: 15px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: rgba(0,0,0,.8);
+	border-radius: 50%;
+}
+.close i {
+	color: #fff;
+	font-size: 20px;
+}
+
+
+/***************************
+ * page editPrice 价格调整
+ ***************************/
+.editList {
+	background: #fff;
+	padding: 0 10px;
+	border-top: #e5e5e5 1px solid;
+	border-bottom: #e5e5e5 1px solid;
+	margin-bottom: 15px;
+}
+.editList p {
+	padding: 10px;
+}
+.editList p + p {
+	border-top: #e5e5e5 1px solid;
+}
+.editList p span {
+	display: inline-block;
+}
+.editList span.left {
+	width: 120px;
+	color: #666;
+}
+.editList input {
+	font-size: 16px;
+}
+.red-color {
+	color: #f23030;
+}
+.edit_btn a {
+	float: left;
+	width: 50%;
+	text-align: center;
+	margin-top: 20px;
+}
+.edit_btn a span {
+	display: block;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	margin: 0 auto 10px;
+}
+.edit_btn a i {
+	color: #fff;
+	font-size: 20px;
+}
+/***保存提示信息***/
+.message-floor {
+	z-index: 1000;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 150px;
+	text-align: center;
+	margin-left: -75px;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, .6);
+	display: none;
+}
+.message-box-icon {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	margin: 18px 0 9px;
+	overflow: hidden;
+}
+.message-box-icon i {
+	font-size: 24px;
+	color: #fff;
+}
+.message-box-content {
+	padding-bottom: 21px;
+	font-size: 15px;
+	line-height: 15px;
+	color: #fff;
+}

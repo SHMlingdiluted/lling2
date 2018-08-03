@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header {
+    position: relative;
+    line-height: 50px;
+    background: #fff;
+    font-weight: bold;
+	text-align: center;
+	border-bottom: #e5e5e5 1px solid;
+	display: none;
+}
+.header a {
+    z-index: 90;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    color: #333;
+	font-size: 24px;
+	font-weight: lighter;
+}
+.pd10 { 
+	padding: 10px 10px; 
+	background: #fff;
+	margin-bottom: 10px;
+	font-size: 15px;
+	border-top: #e5e5e5 1px solid;
+	border-bottom: #e5e5e5 1px solid;
+}
+.invoice_style {
+	padding-bottom: 2px;
+	padding-top: 12px;
+	border-top: none;
+}
+.pd10 h1 {
+	margin-bottom: 10px;
+	font-size: 18px;	
+}
+.invoice_style li {
+	float: left;
+	text-align: center;
+	border: #e5e5e5 1px solid;
+	border-radius: 3px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 6px 10px;
+	position: relative;
+}
+.invoice_style li i {
+	position: absolute;
+	right: -2px;
+	bottom: -7px;
+	color: #f23030;
+	font-size: 20px;
+	display: none;
+}
+ 
+.invoice_style .selected { 
+	border:#f23030 2px solid;
+	padding:5px 9px;
+}
+.invoice_style .selected i {
+	display: block;
+}
+.invoice_title .title li {
+	float:left;
+	line-height:30px;
+	margin-right:25px;
+}
+.circle {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+	width: 18px;
+	height: 18px;
+	border: #ccc 1px solid;
+	border-radius: 50%;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.current .circle {
+	border-color: #f23030;
+}
+.current .circle:before {
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	width: 12px;
+	height: 6px;
+	content: "";
+	border-bottom: #f23030 2px solid;
+	border-left: #f23030 2px solid;
+	transform: rotate(-45deg);
+	box-sizing: border-box;
+}
+.company {
+	background:#f2f2f2;
+	line-height:30px;
+	border-radius:3px;
+	padding-left:10px;
+	position:relative;
+	margin:8px 0 5px;
+	display:none;
+}
+.company input {
+	width:90%;
+	border:none;
+	background:transparent;
+	font-size: 15px;
+}
+
+.company ul {
+	position:absolute;
+	left:0;
+	top:30px;
+	background:#f6f6f6;
+	width:100%;
+	display:none;
+}
+.company li {
+	border-top:#e1e1e1 1px solid;
+	padding:0 10px;
+}
+.sure {
+	position:fixed;
+	bottom:0;
+	right:0;
+	left:0;
+	background:#f2f2f2;
+	color: #fff;
+}
+.sure span {
+	display:block;
+	background:#f23030;
+	text-align:center;
+	line-height:50px;
+	margin:10px 10px;
+	border-radius:3px;
+}
+.Information li {
+	position:relative;
+	padding-left:100px;
+	line-height:40px;
+	border-bottom: #e5e5e5 1px solid;
+}
+.inv > ul > li:last-child {
+	border-bottom: none;
+}
+.Information span {
+	position:absolute;
+	left:0;
+	display:block;
+	width:100px;
+	color:#333;
+}
+.Information input {
+	width:96%;
+	font-size: 16px;
+	outline:none;
+	border:none;
+}
+.tips {
+	margin-bottom:100px;
+	padding:0 10px;
+	line-height:20px;
+	color:#686868;
+	font-size:15px;
+	text-indent:30px;
+}

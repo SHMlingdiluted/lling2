@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+html,body {
+	position: relative;
+}
+body {
+   /*font-family: Tahoma,Verdana,"Microsoft Yahei";*/ 
+}
+
+/*************
+ * 景区美景
+ *************/
+.header {
+	line-height: 50px;
+	text-align: center;
+	display: none;
+}
+
+/*swiper*/
+.swiper-container {
+	width: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img {
+	width: 100%;
+	max-width: 100%;
+}
+
+
+.area-container {
+	margin: 10px 0;
+}
+.area { 
+	background: #f2f2f2;
+	overflow: hidden;
+}
+.area li {
+	float: left;
+	position: relative;
+	width: calc(50% - 2px);
+	height: 0;
+	margin-bottom: 4px;
+	padding-bottom: calc(50% - 2px);
+	overflow: hidden;
+}
+.area li:nth-child(2n) {
+	left: 4px;
+}
+.area li a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:  100%;
+	height:  100%;
+}
+.area li img {
+	width: 100%;
+	height: 100%;
+    animation-delay: 0.5s;
+    animation-name: fadeInLeft;
+}
+.area li span {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	line-height: 40px;
+	background: rgba(0, 0, 0, .6);
+	color: #fff;
+	padding-left: 10px;
+}
+
+/*footer--copyright*/
+.footer {
+	text-align: center;
+	color: #666;
+	margin: 30px 0;
+	padding: 0 10px;
+}
+.copyright a {
+	display: inline;
+	color: #666;
+}
+
+
+/*****************
+ * page areaList 
+ ****************/
+.areaTitle {
+	font-size: 16px;
+	color: #b22222;
+	text-align: center;
+	margin: 30px 0;
+	display: none;
+}
+.areaName {
+	background: #e1e1e1;
+	border-bottom: #ccc 1px solid;
+}
+.areaName.fixTop {
+	z-index: 9999;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	max-width: 750px;
+}
+
+.areaName li {
+	text-align: center;
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	font-size: 16px;
+	margin: 12px 0;
+}
+.areaName li a {
+	height: 24px;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    overflow: hidden;
+}
+.areaName li.current a {
+	color: #b22222;
+	font-weight: bold;
+}
+
+.province + .province {
+	margin-top: 40px;
+}
+.area-list {
+	margin-bottom: 10px;
+}
+.area-list h2 {
+	position: relative;
+	font-size: 18px;
+	padding: 8px 100px 8px 10px;
+	background: #f2f2f2;
+	overflow: hidden;
+}
+.area-list h2 span {
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.area-list h2 a {
+	position: absolute;
+	top: 9px;
+	right: 10px;
+	font-size: 16px;
+	color: #b22222;
+}
+.area-list h2 i {
+	color: #b22222;
+}
+
+
+
+#returnTop {
+	z-index: 9999;
+	position: fixed;
+	right: 0;
+	bottom: 20px;
+	font-size:30px;
+	background: rgba(0, 0, 0, .8);
+	color: #fff;
+	border-radius: 3px 0 0 3px;
+	padding-right: 10px;
+	transition: opacity .3s;
+	cursor: pointer;
+	display: none;
+}
